@@ -1,0 +1,31 @@
+{
+  "name": "qa.webdriverio-and-serenityjs-e2e-test.typescript",
+  "type": "module",
+  "devDependencies": {
+    "@serenity-js/assertions": "^3.21.1",
+    "@serenity-js/console-reporter": "^3.21.1",
+    "@serenity-js/core": "^3.21.1",
+    "@serenity-js/mocha": "^3.21.1",
+    "@serenity-js/rest": "^3.21.1",
+    "@serenity-js/serenity-bdd": "^3.21.1",
+    "@serenity-js/web": "^3.21.1",
+    "@serenity-js/webdriverio": "^3.21.1",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.30",
+    "@wdio/local-runner": "^8.35.1",
+    "@wdio/spec-reporter": "^8.32.4",
+    "mocha": "^10.3.0",
+    "npm-failsafe": "^1.2.0",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.3"
+  },
+  "scripts": {
+    "serenity": "failsafe serenity:update serenity:clean wdio serenity:report",
+    "serenity:update": "serenity-bdd update",
+    "serenity:clean": "rimraf target",
+    "wdio": "wdio run ./wdio.conf.ts",
+    "serenity:report": "serenity-bdd run",
+    "open:report": "open target/site/serenity/index.html"
+  }
+}
